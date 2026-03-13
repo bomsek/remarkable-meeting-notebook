@@ -1,0 +1,433 @@
+\documentclass[aspectratio=43]{article}
+
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\geometry{
+	paperwidth=13.5cm,
+	paperheight=18cm,
+	left=1.1cm,
+	right=1.1cm,
+	top=0.6cm,
+	bottom=0.4cm,
+}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black
+}
+
+\pagestyle{empty}
+
+% ------------------------------------------------
+% Breite der zweiten Tabelle hier einstellen
+% ------------------------------------------------
+\newlength{\meetingtablewidth}
+\setlength{\meetingtablewidth}{\textwidth}
+
+
+% ------------------------------------------------
+% Modern Titlepage
+% ------------------------------------------------
+\newcommand{\titlepageModern}{
+	
+	\begin{titlepage}
+		
+		\begin{tikzpicture}[remember picture,overlay]
+			
+			% grauer Hintergrund
+			\fill[darkgray!75] (current page.south west) rectangle (current page.north east);
+			
+			% heller Titelkasten (nach oben verschoben)
+			\node[
+			fill=white,
+			rounded corners=10pt,
+			minimum width=10cm,
+			minimum height=4cm,
+			align=center,
+			yshift=3cm
+			] at (current page.center)
+			{
+			{\fontsize{100}{120}\selectfont \textbf{Meetings}}
+			};
+			
+		\end{tikzpicture}
+		
+	\end{titlepage}
+	
+}
+
+% ------------------------------------------------
+% Meeting Page
+% ------------------------------------------------
+\newcommand{\meetingpage}[1]{
+	
+	\hypertarget{p#1}{}
+	
+	\begin{center}
+		\begin{scriptsize}
+			
+			\begin{tabularx}{\meetingtablewidth}{Xr}
+				Date: \hspace{1cm} / &
+				
+				\ifnum#1<26
+				\hyperlink{index}{$\leftarrow$ Index A}
+				\else
+				\ifnum#1<51
+				\hyperlink{indexB}{$\leftarrow$ Index B}
+				\else
+				\ifnum#1<76
+				\hyperlink{indexC}{$\leftarrow$ Index C}
+				\else
+				\hyperlink{indexD}{$\leftarrow$ Index D}
+				\fi
+				\fi
+				\fi
+				
+				\\
+				\hline
+				\\[3pt]
+				\multicolumn{2}{l}{Meeting Title:} \\
+			\end{tabularx}
+			
+		\end{scriptsize}
+	\end{center}
+	
+	\begin{tcolorbox}[height=3cm,colback=white]
+	\end{tcolorbox}
+	
+	\vspace{0.2cm}
+	
+	\begin{center}
+		\dotgrid{11.5}{12}
+	\end{center}
+	
+	\newpage
+}
+
+% ------------------------------------------------
+% Dot grid
+% ------------------------------------------------
+\newcommand{\dotgrid}[2]{
+	\begin{tikzpicture}
+		\foreach \x in {0,0.4,...,#1}
+		\foreach \y in {0,0.4,...,#2}
+		\fill (\x,\y) circle (0.4pt);
+	\end{tikzpicture}
+}
+
+
+\begin{document}
+	
+	\titlepageModern
+	
+	% ------------------------------------------------
+	% Index A
+	% ------------------------------------------------
+	
+	\hypertarget{index}{}
+	
+	{\normalsize\textbf{Index A}}
+	
+	\begin{center}
+		\begin{scriptsize}
+			
+			\renewcommand{\arraystretch}{2.15}
+			
+			\begin{tabular}{c|p{0.7\textwidth}|p{0.15\textwidth}}
+				\textbf{Nr.} & \textbf{Meeting title} & \textbf{Date} \\
+				\hline
+				\hyperlink{p1}{1} & & \\ \hline
+				\hyperlink{p2}{2} & & \\ \hline
+				\hyperlink{p3}{3} & & \\ \hline
+				\hyperlink{p4}{4} & & \\ \hline
+				\hyperlink{p5}{5} & & \\ \hline
+				\hyperlink{p6}{6} & & \\ \hline
+				\hyperlink{p7}{7} & & \\ \hline
+				\hyperlink{p8}{8} & & \\ \hline
+				\hyperlink{p9}{9} & & \\ \hline
+				\hyperlink{p10}{10} & & \\ \hline
+				\hyperlink{p11}{11} & & \\ \hline
+				\hyperlink{p12}{12} & & \\ \hline
+				\hyperlink{p13}{13} & & \\ \hline
+				\hyperlink{p14}{14} & & \\ \hline
+				\hyperlink{p15}{15} & & \\ \hline
+				\hyperlink{p16}{16} & & \\ \hline
+				\hyperlink{p17}{17} & & \\ \hline
+				\hyperlink{p18}{18} & & \\ \hline
+				\hyperlink{p19}{19} & & \\ \hline
+				\hyperlink{p20}{20} & & \\ \hline
+				\hyperlink{p21}{21} & & \\ \hline
+				\hyperlink{p22}{22} & & \\ \hline
+				\hyperlink{p23}{23} & & \\ \hline
+				\hyperlink{p24}{24} & & \\ \hline
+				\hyperlink{p25}{25} & & \\ 
+			\end{tabular}
+			
+		\end{scriptsize}
+	\end{center}
+	
+	\newpage
+	
+% ------------------------------------------------
+% Index B
+% ------------------------------------------------
+
+\hypertarget{indexB}{}
+
+{\normalsize\textbf{Index B}}
+
+\begin{center}
+	\begin{scriptsize}
+		
+		\renewcommand{\arraystretch}{2.15}
+		
+		\begin{tabular}{c|p{0.7\textwidth}|p{0.15\textwidth}}
+			\textbf{Nr.} & \textbf{Meeting title} & \textbf{Date} \\
+			\hline
+			\hyperlink{p26}{26} & & \\ \hline
+			\hyperlink{p27}{27} & & \\ \hline
+			\hyperlink{p28}{28} & & \\ \hline
+			\hyperlink{p29}{29} & & \\ \hline
+			\hyperlink{p30}{30} & & \\ \hline
+			\hyperlink{p31}{31} & & \\ \hline
+			\hyperlink{p32}{32} & & \\ \hline
+			\hyperlink{p33}{33} & & \\ \hline
+			\hyperlink{p34}{34} & & \\ \hline
+			\hyperlink{p35}{35} & & \\ \hline
+			\hyperlink{p36}{36} & & \\ \hline
+			\hyperlink{p37}{37} & & \\ \hline
+			\hyperlink{p38}{38} & & \\ \hline
+			\hyperlink{p39}{39} & & \\ \hline
+			\hyperlink{p40}{40} & & \\ \hline
+			\hyperlink{p41}{41} & & \\ \hline
+			\hyperlink{p42}{42} & & \\ \hline
+			\hyperlink{p43}{43} & & \\ \hline
+			\hyperlink{p44}{44} & & \\ \hline
+			\hyperlink{p45}{45} & & \\ \hline
+			\hyperlink{p46}{46} & & \\ \hline
+			\hyperlink{p47}{47} & & \\ \hline
+			\hyperlink{p48}{48} & & \\ \hline
+			\hyperlink{p49}{49} & & \\ \hline
+			\hyperlink{p50}{50} & & \\
+		\end{tabular}
+		
+	\end{scriptsize}
+\end{center}
+
+\newpage
+
+% ------------------------------------------------
+% Index C
+% ------------------------------------------------
+
+\hypertarget{indexC}{}
+
+{\normalsize\textbf{Index C}}
+
+\begin{center}
+	\begin{scriptsize}
+		
+		\renewcommand{\arraystretch}{2.15}
+		
+		\begin{tabular}{c|p{0.7\textwidth}|p{0.15\textwidth}}
+			\textbf{Nr.} & \textbf{Meeting title} & \textbf{Date} \\
+			\hline
+			\hyperlink{p51}{51} & & \\ \hline
+			\hyperlink{p52}{52} & & \\ \hline
+			\hyperlink{p53}{53} & & \\ \hline
+			\hyperlink{p54}{54} & & \\ \hline
+			\hyperlink{p55}{55} & & \\ \hline
+			\hyperlink{p56}{56} & & \\ \hline
+			\hyperlink{p57}{57} & & \\ \hline
+			\hyperlink{p58}{58} & & \\ \hline
+			\hyperlink{p59}{59} & & \\ \hline
+			\hyperlink{p60}{60} & & \\ \hline
+			\hyperlink{p61}{61} & & \\ \hline
+			\hyperlink{p62}{62} & & \\ \hline
+			\hyperlink{p63}{63} & & \\ \hline
+			\hyperlink{p64}{64} & & \\ \hline
+			\hyperlink{p65}{65} & & \\ \hline
+			\hyperlink{p66}{66} & & \\ \hline
+			\hyperlink{p67}{67} & & \\ \hline
+			\hyperlink{p68}{68} & & \\ \hline
+			\hyperlink{p69}{69} & & \\ \hline
+			\hyperlink{p70}{70} & & \\ \hline
+			\hyperlink{p71}{71} & & \\ \hline
+			\hyperlink{p72}{72} & & \\ \hline
+			\hyperlink{p73}{73} & & \\ \hline
+			\hyperlink{p74}{74} & & \\ \hline
+			\hyperlink{p75}{75} & & \\ 
+		\end{tabular}
+		
+	\end{scriptsize}
+\end{center}
+
+\newpage
+
+% ------------------------------------------------
+% Index D
+% ------------------------------------------------
+
+\hypertarget{indexD}{}
+
+{\normalsize\textbf{Index D}}
+
+\begin{center}
+	\begin{scriptsize}
+		
+		\renewcommand{\arraystretch}{2.15}
+		
+		\begin{tabular}{c|p{0.7\textwidth}|p{0.15\textwidth}}
+			\textbf{Nr.} & \textbf{Meeting title} & \textbf{Date} \\
+			\hline
+			\hyperlink{p76}{76} & & \\ \hline
+			\hyperlink{p77}{77} & & \\ \hline
+			\hyperlink{p78}{78} & & \\ \hline
+			\hyperlink{p79}{79} & & \\ \hline
+			\hyperlink{p80}{80} & & \\ \hline
+			\hyperlink{p81}{81} & & \\ \hline
+			\hyperlink{p82}{82} & & \\ \hline
+			\hyperlink{p83}{83} & & \\ \hline
+			\hyperlink{p84}{84} & & \\ \hline
+			\hyperlink{p85}{85} & & \\ \hline
+			\hyperlink{p86}{86} & & \\ \hline
+			\hyperlink{p87}{87} & & \\ \hline
+			\hyperlink{p88}{88} & & \\ \hline
+			\hyperlink{p89}{89} & & \\ \hline
+			\hyperlink{p90}{90} & & \\ \hline
+			\hyperlink{p91}{91} & & \\ \hline
+			\hyperlink{p92}{92} & & \\ \hline
+			\hyperlink{p93}{93} & & \\ \hline
+			\hyperlink{p94}{94} & & \\ \hline
+			\hyperlink{p95}{95} & & \\ \hline
+			\hyperlink{p96}{96} & & \\ \hline
+			\hyperlink{p97}{97} & & \\ \hline
+			\hyperlink{p98}{98} & & \\ \hline
+			\hyperlink{p99}{99} & & \\ \hline
+			\hyperlink{p100}{100} & & \\
+		\end{tabular}
+		
+	\end{scriptsize}
+\end{center}
+
+\newpage
+
+	
+	% ------------------------------------------------
+	% Meetingseiten
+	% ------------------------------------------------
+	
+	\meetingpage{1}
+	\meetingpage{2}
+	\meetingpage{3}
+	\meetingpage{4}
+	\meetingpage{5}
+	\meetingpage{6}
+	\meetingpage{7}
+	\meetingpage{8}
+	\meetingpage{9}
+	\meetingpage{10}
+	\meetingpage{11}
+	\meetingpage{12}
+	\meetingpage{13}
+	\meetingpage{14}
+	\meetingpage{15}
+	\meetingpage{16}
+	\meetingpage{17}
+	\meetingpage{18}
+	\meetingpage{19}
+	\meetingpage{20}
+	\meetingpage{21}
+	\meetingpage{22}
+	\meetingpage{23}
+	\meetingpage{24}
+	\meetingpage{25}
+	
+	
+	\meetingpage{26}
+	\meetingpage{27}
+	\meetingpage{28}
+	\meetingpage{29}
+	\meetingpage{30}
+	\meetingpage{31}
+	\meetingpage{32}
+	\meetingpage{33}
+	\meetingpage{34}
+	\meetingpage{35}
+	\meetingpage{36}
+	\meetingpage{37}
+	\meetingpage{38}
+	\meetingpage{39}
+	\meetingpage{40}
+	\meetingpage{41}
+	\meetingpage{42}
+	\meetingpage{43}
+	\meetingpage{44}
+	\meetingpage{45}
+	\meetingpage{46}
+	\meetingpage{47}
+	\meetingpage{48}
+	\meetingpage{49}
+	\meetingpage{50}
+	
+	
+	\meetingpage{51}
+	\meetingpage{52}
+	\meetingpage{53}
+	\meetingpage{54}
+	\meetingpage{55}
+	\meetingpage{56}
+	\meetingpage{57}
+	\meetingpage{58}
+	\meetingpage{59}
+	\meetingpage{60}
+	\meetingpage{61}
+	\meetingpage{62}
+	\meetingpage{63}
+	\meetingpage{64}
+	\meetingpage{65}
+	\meetingpage{66}
+	\meetingpage{67}
+	\meetingpage{68}
+	\meetingpage{69}
+	\meetingpage{70}
+	\meetingpage{71}
+	\meetingpage{72}
+	\meetingpage{73}
+	\meetingpage{74}
+	\meetingpage{75}
+	
+	\meetingpage{76}
+	\meetingpage{77}
+	\meetingpage{78}
+	\meetingpage{79}
+	\meetingpage{80}
+	\meetingpage{81}
+	\meetingpage{82}
+	\meetingpage{83}
+	\meetingpage{84}
+	\meetingpage{85}
+	\meetingpage{86}
+	\meetingpage{87}
+	\meetingpage{88}
+	\meetingpage{89}
+	\meetingpage{90}
+	\meetingpage{91}
+	\meetingpage{92}
+	\meetingpage{93}
+	\meetingpage{94}
+	\meetingpage{95}
+	\meetingpage{96}
+	\meetingpage{97}
+	\meetingpage{98}
+	\meetingpage{99}
+	\meetingpage{100}
+	
+	
+\end{document}
